@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    <div class="slide-container" aria-label="Content">
+      <div class="sidebar-left">
+        <p></p>
+        <p>{{ page.section }}</p>
+        <p>AA</p>
+      </div>
+      <div class="sidebar-right">
+        <p>{{ site.data.scan.city }}, {{ site.data.scan.country }}</p>
+        <p>City Scan</p>
+        <p>City Resilience Program</p>
+      </div>
+      <div class="slide-content">
+        <h1>{{ page.title }}</h1>
+        <div class="map">
+          <img src="{{site.url}}/assets/{{page.img}}">
+        </div>
+        <div class="legend">
+          <h3>{{ page.legend.title }}</h3>
+          <p>{{ page.legend.units }}</p>
+          {% for class in page.legend.classes %}
+            <p class="legend-class"><span class="class-color" style="background-color: {{ class[1] }};"></span>{{ class[0] }}</p>
+          {% endfor %}
+        </div>
+        <div class="body-text">{{ content }}</div>
+        <div class="notes-line"></div>
+        <div class="notes-footer">
+          {{ page.footer }}
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

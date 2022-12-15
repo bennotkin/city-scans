@@ -1,0 +1,24 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+<h1>City Scan</h1>
+<h1> {{ site.data.scan.city }}, {{ site.data.scan.country }} </h1>
+
+{% assign collections_sorted = site.collections | sort: "number" %}
+{% for collection in collections_sorted %}
+        <h2>{{ collection.section }}</h1>
+        
+        {% for slide in collection.docs %}
+                {{ slide }}
+        {% endfor %}
+
+{% endfor %}
+
+{% assign slides = site.slides | group_by: "section" %}
+{% assign slides_sorted = site.posts | sort: "order" %}
+{% for slide in slides_sorted %}
+        {{slide}}
+{% endfor %}

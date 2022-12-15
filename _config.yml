@@ -31,7 +31,7 @@ github_username:  jekyll
 
 domain: bennotkin.github.io
 url: https://bennotkin.github.io
-baseurl: city-scans
+baseurl: /city-scans
 
 # Build settings
 # theme: minima
